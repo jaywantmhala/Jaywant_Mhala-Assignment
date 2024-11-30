@@ -8,11 +8,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.jaywant.DTO.CategoryResponse;
 import com.jaywant.Exception.ResourceNotFoundException;
 import com.jaywant.Model.Category;
 import com.jaywant.Repo.CategoryRepo;
-
-import DTO.CategoryResponse;
 
 @Service
 public class CategoryServices {
@@ -26,7 +25,7 @@ public class CategoryServices {
 	}
 	
 	public List<Category> getAllCategory(int page) {
-	    Pageable pageable = PageRequest.of(page,1);
+	    Pageable pageable = PageRequest.of(page,3);
 	    Page<Category> categoryPage = categoryRepo.findAll(pageable);
 	    return categoryPage.getContent(); 
 	}

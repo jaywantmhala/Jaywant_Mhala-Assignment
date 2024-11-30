@@ -8,14 +8,13 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.jaywant.DTO.ProductRequest;
+import com.jaywant.DTO.ProductResponse;
 import com.jaywant.Exception.ResourceNotFoundException;
 import com.jaywant.Model.Category;
 import com.jaywant.Model.Product;
 import com.jaywant.Repo.CategoryRepo;
 import com.jaywant.Repo.ProductRepo;
-
-import DTO.ProductRequest;
-import DTO.ProductResponse;
 
 @Service
 public class ProductService {
@@ -59,6 +58,9 @@ public class ProductService {
 
 	    return response;
 	}
+	
+	
+	
 
 	public List<Product> getAllProduct(int page) {
 		Pageable pageable = PageRequest.of(page, 1);
@@ -70,20 +72,30 @@ public class ProductService {
 		this.productRepo.deleteById(productId);
 	}
 	
+	
+	
+	
 	public Product updateProduct(int productId, Product product) {
-	    Product oldProduct = this.productRepo.findById(productId)
-	            .orElseThrow(() -> new ResourceNotFoundException("Product item not found with id is : " + productId));
+	    Product products = productRepo.findById(productId)
+	            .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + productId));
 
-	    oldProduct.setProductName(product.getProductName());
-	    oldProduct.setPrice(product.getPrice());
-	    oldProduct.setImage(product.getImage());
-	    oldProduct.setDescription(product.getDescription());
-
+	    if (product.getProductName() != null) {
+	    	products.setProductName(product.getProductName());
+	    }
+	    if (product.getPrice() != null) {
+	    	products.setPrice(product.getPrice());
+	    }
+	    if (product.getImage() != null) {
+	    	products.setImage(product.getImage());
+	    }
+	    if (product.getDescription() != null) {
+	    	products.setDescription(product.getDescription());
+	    }
 	    if (product.getCategory() != null) {
-	    	oldProduct.setCategory(product.getCategory());
+	    	products.setCategory(product.getCategory());
 	    }
 
-	    return this.productRepo.save(oldProduct);
+	    return productRepo.save(products);
 	}
 
 	

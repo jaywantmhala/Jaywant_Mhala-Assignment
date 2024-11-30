@@ -1,4 +1,4 @@
-package DTO;
+package com.jaywant.DTO;
 
 
 public class ProductRequest {

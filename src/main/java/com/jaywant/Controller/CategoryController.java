@@ -7,10 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.jaywant.DTO.CategoryResponse;
 import com.jaywant.Model.Category;
 import com.jaywant.Services.CategoryServices;
-
-import DTO.CategoryResponse;
 
 @RestController
 @RequestMapping("/api/categories")
@@ -26,8 +25,7 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Category>> getCategories(
-            @RequestParam(defaultValue = "0") int page) {
+    public ResponseEntity<List<Category>> getCategories(@RequestParam(defaultValue = "0") int page) {
         List<Category> categories = categoryService.getAllCategory(page);
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
@@ -45,7 +43,7 @@ public class CategoryController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Category> updateCategory(@PathVariable int id, @RequestBody Category category) {
+    public ResponseEntity<Category> updateCategory(@PathVariable int id,@RequestBody Category category) {
         Category updatedCategory = categoryService.updateCategory(id, category);
         return new ResponseEntity<>(updatedCategory, HttpStatus.OK);
     }

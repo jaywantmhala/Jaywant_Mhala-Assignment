@@ -7,11 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.jaywant.DTO.ProductRequest;
+import com.jaywant.DTO.ProductResponse;
 import com.jaywant.Model.Product;
 import com.jaywant.Services.ProductService;
-
-import DTO.ProductRequest;
-import DTO.ProductResponse;
 
 @RestController
 @RequestMapping("/api/products")
