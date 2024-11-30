@@ -21,10 +21,10 @@
 | HTTP Method                                         | Route Path                                   | Parameters  | Description              |
 |----------------------------------------------------|---------------------------------------------|-------------|--------------------------|
 | <img alt="Static Badge" src="https://img.shields.io/badge/post-green?style=for-the-badge">   | `http://localhost:8082/api/products`      | -           | Create new product      |
-| <img alt="Static Badge" src="https://img.shields.io/badge/put-yellow?style=for-the-badge">   | `http://localhost:8082/api/products/{id}` | categoryId  | Update existing product |
-| <img alt="Static Badge" src="https://img.shields.io/badge/delete-red?style=for-the-badge">  | `http://localhost:8082/api/products/{id}` | categoryId  | Delete existing product |
+| <img alt="Static Badge" src="https://img.shields.io/badge/put-yellow?style=for-the-badge">   | `http://localhost:8082/api/products/{id}` | productId  | Update existing product |
+| <img alt="Static Badge" src="https://img.shields.io/badge/delete-red?style=for-the-badge">  | `http://localhost:8082/api/products/{id}` | productId  | Delete existing product |
 | <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge">    | `http://localhost:8082/api/products?page=1`      | -           | Get all product       |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge">    | `http://localhost:8082/api/products/{id}` | categoryId  | Get product by id       |
+| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge">    | `http://localhost:8082/api/products/{id}` | productId  | Get product by id       |
 
 
  ### 🚀 Some important Endpoint 
