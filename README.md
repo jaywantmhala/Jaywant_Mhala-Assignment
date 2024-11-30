@@ -27,7 +27,7 @@
 | <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge">    | `http://localhost:8082/api/products/{id}` | categoryId  | Get product by id       |
 
 
- ### 🚀 Some important Endpoint Response
+ ### 🚀 Some important Endpoint 
 
 ### for Creating product
 {
@@ -36,7 +36,7 @@
     "price": xx,
     "image": "xxxxx.xxx",
     "description": "xxxxxxx",
-    "categoryId":102                                  // existing categoryId
+    "categoryId":102                                  // enter existing categoryId
 
 
 }
